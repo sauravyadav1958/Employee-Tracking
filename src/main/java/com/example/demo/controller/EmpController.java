@@ -51,7 +51,7 @@ public class EmpController {
 			responseDetailsObj.setResponseMessage("Name can't be null");
 			responseDetailsObj.setResponseData(null);
 			return new ResponseEntity<>(responseDetailsObj, HttpStatus.BAD_REQUEST);
-		}else if(employee.getName().isBlank()){
+		}else if(employee.getName().trim().length() == 0){
 			responseDetailsObj.setDateAndTime(LocalDateTime.now());
 			responseDetailsObj.setResponseCode("400");
 			responseDetailsObj.setResponseMessage("Name can't be empty");
@@ -69,7 +69,7 @@ public class EmpController {
 			responseDetailsObj.setResponseMessage("Address can't be null");
 			responseDetailsObj.setResponseData(null);
 			return new ResponseEntity<>(responseDetailsObj, HttpStatus.BAD_REQUEST);
-		}else if(employee.getAddress().isBlank()){
+		}else if(employee.getAddress().trim().length() == 0){
 			responseDetailsObj.setDateAndTime(LocalDateTime.now());
 			responseDetailsObj.setResponseCode("400");
 			responseDetailsObj.setResponseMessage("Address can't be empty");
@@ -81,7 +81,7 @@ public class EmpController {
 			responseDetailsObj.setResponseMessage("Email can't be null");
 			responseDetailsObj.setResponseData(null);
 			return new ResponseEntity<>(responseDetailsObj, HttpStatus.BAD_REQUEST);
-		}else if(employee.getEmail().isBlank()){
+		}else if(employee.getEmail().trim().length() == 0){
 			responseDetailsObj.setDateAndTime(LocalDateTime.now());
 			responseDetailsObj.setResponseCode("400");
 			responseDetailsObj.setResponseMessage("Email can't be empty");
@@ -99,7 +99,7 @@ public class EmpController {
 			responseDetailsObj.setResponseMessage("PhoneNumber can't be null");
 			responseDetailsObj.setResponseData(null);
 			return new ResponseEntity<>(responseDetailsObj, HttpStatus.BAD_REQUEST);
-		}else if(employee.getPhno().isBlank()) {
+		}else if(employee.getPhno().trim().length() == 0) {
 			responseDetailsObj.setDateAndTime(LocalDateTime.now());
 			responseDetailsObj.setResponseCode("400");
 			responseDetailsObj.setResponseMessage("PhoneNumber can't be empty");
